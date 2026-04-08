@@ -62,6 +62,7 @@ Dtos/
  CategoryDto.cs
  TagDto.cs
  TodoDto.cs
+Events/TodoCreatedEvent.cs
 Features/Auth/
  LoginCommand.cs
  RegisterCommand.cs
@@ -86,6 +87,7 @@ Interfaces/
  ICacheService.cs
  ICurrentUserService.cs
  IDistributedLockService.cs
+ IKafkaPublisher.cs
  IPubSubService.cs
  IRateLimitService.cs
  ITodoServices.cs

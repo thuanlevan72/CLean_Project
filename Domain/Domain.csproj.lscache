@@ -61,6 +61,7 @@ Entities/Base/
  ISoftDelete.cs
 Entities/
  Category.cs
+ OutboxMessage.cs
  Tag.cs
  TodoItem.cs
 Enums/Enum.cs
@@ -73,6 +74,7 @@ Repositories/Base/
  IUnitOfWork.cs
 Repositories/
  ICategoryRepository.cs
+ IOutboxRepository.cs
  ITagRepository.cs
  ITodoItemRepository.cs
 

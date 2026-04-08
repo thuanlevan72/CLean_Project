@@ -60,6 +60,7 @@ Data/
  AppDbContext.cs
  Configurations/
   CategoryConfiguration.cs
+  OutboxMessageConfiguration.cs
   TagConfiguration.cs
   TodoItemConfiguration.cs
 DependencyInjection.cs
@@ -72,6 +73,12 @@ Migrations/
  20260407141330_InitialCreate.Designer.cs
  20260407152141_AddRolesSeed.cs
  20260407152141_AddRolesSeed.Designer.cs
+ 20260408143516_AddOutbox.cs
+ 20260408143516_AddOutbox.Designer.cs
+ 20260408143731_AddOutboxupdate.cs
+ 20260408143731_AddOutboxupdate.Designer.cs
+ 20260408143904_AddOutboxupdate2.cs
+ 20260408143904_AddOutboxupdate2.Designer.cs
  AppDbContextModelSnapshot.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
@@ -83,15 +90,19 @@ Repository/Base/
  UnitOfWork.cs
 Repository/
  CategoryRepository.cs
+ OutboxRepository.cs
  TagRepository.cs
  TodoItemRepository.cs
  TodoRepository.cs
+Workers/RedisTrackingBatchWorker.cs
 
 [metadataReferences]
 ../
  Application/obj/Debug/net10.0/ref/Application.dll
  Common/obj/Debug/net8.0/ref/Common.dll
  Domain/obj/Debug/net10.0/ref/Domain.dll
+ Infrastructure.Kafka/obj/Debug/net10.0/ref/Infrastructure.Kafka.dll
+ Infrastructure.Redis/obj/Debug/net10.0/ref/Infrastructure.Redis.dll
 <DOTNET>/packs/Microsoft.AspNetCore.App.Ref/10.0.5/ref/net10.0/
  Microsoft.AspNetCore.Antiforgery.dll
  Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -403,12 +414,14 @@ Repository/
  WindowsBase.dll
 <NUGET>/
  automapper/16.1.1/lib/net10.0/AutoMapper.dll
+ confluent.kafka/2.14.0/lib/net8.0/Confluent.Kafka.dll
  mediatr.contracts/2.0.1/lib/netstandard2.0/MediatR.Contracts.dll
  mediatr/14.1.0/lib/net10.0/MediatR.dll
  microsoft.aspnetcore.identity.entityframeworkcore/10.0.5/lib/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
  microsoft.entityframeworkcore.abstractions/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
  microsoft.entityframeworkcore.relational/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
  microsoft.entityframeworkcore/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.dll
+ microsoft.extensions.caching.stackexchangeredis/10.0.5/lib/net10.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
  microsoft.extensions.dependencymodel/10.0.5/lib/net10.0/Microsoft.Extensions.DependencyModel.dll
  microsoft.identitymodel.abstractions/8.17.0/lib/net10.0/Microsoft.IdentityModel.Abstractions.dll
  microsoft.identitymodel.jsonwebtokens/8.17.0/lib/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
@@ -416,6 +429,7 @@ Repository/
  microsoft.identitymodel.tokens/8.17.0/lib/net10.0/Microsoft.IdentityModel.Tokens.dll
  npgsql.entityframeworkcore.postgresql/10.0.1/lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
  npgsql/10.0.2/lib/net10.0/Npgsql.dll
+ pipelines.sockets.unofficial/2.2.8/lib/net5.0/Pipelines.Sockets.Unofficial.dll
  serilog.aspnetcore/10.0.0/lib/net10.0/Serilog.AspNetCore.dll
  serilog.extensions.hosting/10.0.0/lib/net10.0/Serilog.Extensions.Hosting.dll
  serilog.extensions.logging/10.0.0/lib/net10.0/Serilog.Extensions.Logging.dll
@@ -425,6 +439,7 @@ Repository/
  serilog.sinks.debug/3.0.0/lib/net8.0/Serilog.Sinks.Debug.dll
  serilog.sinks.file/7.0.0/lib/net9.0/Serilog.Sinks.File.dll
  serilog/4.3.0/lib/net9.0/Serilog.dll
+ stackexchange.redis/2.7.27/lib/net6.0/StackExchange.Redis.dll
  system.identitymodel.tokens.jwt/8.17.0/lib/net10.0/System.IdentityModel.Tokens.Jwt.dll
 
 [analyzerReferences]

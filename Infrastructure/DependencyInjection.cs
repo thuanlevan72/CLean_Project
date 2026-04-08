@@ -3,6 +3,7 @@ using Domain.Repositories;
 using Infrastructure.Postgres.Data;
 using Infrastructure.Postgres.Identity;
 using Infrastructure.Postgres.Repository;
+using Infrastructure.Postgres.Workers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +47,8 @@ public static class DependencyInjection
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ITagRepository, TagRepository>();
         services.AddScoped<ITodoItemRepository, TodoItemRepository>();
+
+        // ĐÃ XÓA: services.AddHostedService<RedisTrackingBatchWorker>(); -> Vì đã có Hangfire lo!
 
         return services;
     }

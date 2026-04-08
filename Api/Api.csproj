@@ -30,6 +30,8 @@
 		<ProjectReference Include="..\Application\Application.csproj" />
 		<ProjectReference Include="..\Common\Common.csproj" />
 		<ProjectReference Include="..\DatabaseFristPostgres\DatabaseFristPostgres.csproj" />
+		<ProjectReference Include="..\Infrastructure.Hangfire\Infrastructure.Hangfire.csproj" />
+		<ProjectReference Include="..\Infrastructure.Kafka\Infrastructure.Kafka.csproj" />
 		<ProjectReference Include="..\Infrastructure.Redis\Infrastructure.Redis.csproj" />
 		<ProjectReference Include="..\Infrastructure\Infrastructure.Postgres.csproj" />
 	</ItemGroup>

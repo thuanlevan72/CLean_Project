@@ -12,13 +12,13 @@ public class PubSubService : IPubSubService
     public async Task PublishAsync(string channel, string message)
     {
         var sub = _redis.GetSubscriber();
-        await sub.PublishAsync(channel, message);
+        await sub.PublishAsync(RedisChannel.Literal("channel"), message);   
     }
 
     public async Task SubscribeAsync(string channel, Action<string, string> handler)
     {
         var sub = _redis.GetSubscriber();
-        await sub.SubscribeAsync(channel, (ch, msg) =>
+        await sub.SubscribeAsync(RedisChannel.Literal("channel"), (ch, msg) =>
         {
             handler(ch.ToString(), msg.ToString());
         });

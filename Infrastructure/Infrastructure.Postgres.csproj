@@ -25,6 +25,8 @@
 		<ProjectReference Include="..\Application\Application.csproj" />
 		<ProjectReference Include="..\Common\Common.csproj" />
 		<ProjectReference Include="..\Domain\Domain.csproj" />
+		<ProjectReference Include="..\Infrastructure.Kafka\Infrastructure.Kafka.csproj" />
+		<ProjectReference Include="..\Infrastructure.Redis\Infrastructure.Redis.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Migrations\" />

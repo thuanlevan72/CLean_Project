@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Infrastructure.Redis.Fallbacks;
 using Infrastructure.Redis.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,21 +18,21 @@ public static class DependencyInjection
         {
             try
             {
-                // Cấu hình Timeout ngắn (3 giây) để app không bị treo lâu nếu Redis sập
                 var options = ConfigurationOptions.Parse(redisConnectionString);
                 options.AbortOnConnectFail = true;
                 options.ConnectTimeout = 3000;
 
-                // THỬ KẾT NỐI
                 var multiplexer = ConnectionMultiplexer.Connect(options);
 
-                // NẾU THÀNH CÔNG -> Đăng ký đồ thật
                 services.AddSingleton<IConnectionMultiplexer>(multiplexer);
                 services.AddStackExchangeRedisCache(opt => { opt.Configuration = redisConnectionString; });
 
                 services.AddScoped<IRateLimitService, RateLimitService>();
                 services.AddScoped<IDistributedLockService, DistributedLockService>();
                 services.AddScoped<IPubSubService, PubSubService>();
+
+                // 🔥 FIX QUAN TRỌNG: Phải là Singleton để đi chung với KafkaPublisher
+                services.AddSingleton<IRedisMessageTracker, RedisMessageTracker>();
 
                 isRedisConnected = true;
                 Console.WriteLine("✅ Đã kết nối Redis Server thành công!");
@@ -43,54 +44,22 @@ public static class DependencyInjection
             }
         }
 
-        // ==============================================================
-        // CHẾ ĐỘ DỰ PHÒNG (FALLBACK) KHÍ REDIS CHẾT HOẶC CHƯA CÀI ĐẶT
-        // ==============================================================
         if (!isRedisConnected)
         {
-            // 1. Chuyển Cache về dùng RAM của máy chủ chạy API
             services.AddDistributedMemoryCache();
-
-            // 2. Chuyển các Service phụ thuộc Redis về chế độ "Mock" để không crash App
             services.AddScoped<IRateLimitService, FallbackRateLimitService>();
             services.AddScoped<IDistributedLockService, FallbackDistributedLockService>();
             services.AddScoped<IPubSubService, FallbackPubSubService>();
+
+            // 🔥 Cũng phải đổi thành Singleton
+            services.AddSingleton<IRedisMessageTracker, FallbackRedisMessageTracker>();
         }
 
-        // Service này dùng IDistributedCache (interface chung) nên Redis hay RAM nó đều chạy tốt!
         services.AddScoped<ICacheService, RedisCacheService>();
 
         return services;
     }
 }
 
-// =========================================================================
-// CÁC CLASS DỰ PHÒNG (NO-OP/MOCK) - Đặt luôn ở dưới file này cho gọn
-// =========================================================================
-
-public class FallbackRateLimitService : IRateLimitService
-{
-    // Khi sập Redis, tạm thời tắt tính năng chống Spam (cho phép qua hết)
-    public Task<bool> IsAllowedAsync(string key, int maxRequests, TimeSpan window)
-        => Task.FromResult(true);
-}
-
-public class FallbackDistributedLockService : IDistributedLockService
-{
-    // Khi sập Redis, tạm tắt tính năng Lock phân tán (chấp nhận rủi ro nhỏ)
-    public Task<bool> AcquireLockAsync(string resourceKey, string token, TimeSpan expiry)
-        => Task.FromResult(true);
-
-    public Task ReleaseLockAsync(string resourceKey, string token)
-        => Task.CompletedTask;
-}
-
-public class FallbackPubSubService : IPubSubService
-{
-    // PubSub không có Redis sẽ không chạy được trên nhiều server, tạm vô hiệu hóa
-    public Task PublishAsync(string channel, string message)
-        => Task.CompletedTask;
-
-    public Task SubscribeAsync(string channel, Action<string, string> handler)
-        => Task.CompletedTask;
-}
+// Lời khuyên: Các class Fallback này nên được bôi đen, Cắt (Cut) và Dán sang 
+// các file riêng biệt trong thư mục `Infrastructure.Redis/Fallbacks/` để file này thật gọn.
