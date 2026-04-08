@@ -1,0 +1,94 @@
+[2026-04-07 20:14:40] [INF] [Microsoft.Hosting.Lifetime] Now listening on: https://localhost:7096
+[2026-04-07 20:14:40] [INF] [Microsoft.Hosting.Lifetime] Now listening on: http://localhost:5197
+[2026-04-07 20:14:40] [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+[2026-04-07 20:14:40] [INF] [Microsoft.Hosting.Lifetime] Hosting environment: Development
+[2026-04-07 20:14:40] [INF] [Microsoft.Hosting.Lifetime] Content root path: D:\Work\todo_project\Api
+[2026-04-07 20:14:41] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/index.html - null null
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/index.html - 200 null text/html;charset=utf-8 324.3468ms
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/_framework/aspnetcore-browser-refresh.js - null null
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/_vs/browserLink - null null
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/_framework/aspnetcore-browser-refresh.js - 200 14911 application/javascript; charset=utf-8 6.1826ms
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/_vs/browserLink - 200 null text/javascript; charset=UTF-8 316.4665ms
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/v1/swagger.json - null null
+[2026-04-07 20:14:42] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.1733ms
+[2026-04-07 21:13:51] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Migrations] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Migrations] Applying migration '20260407141330_InitialCreate'.
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Roles" (
+    "Id" uuid NOT NULL,
+    "Description" text,
+    "Name" character varying(256),
+    "NormalizedName" character varying(256),
+    "ConcurrencyStamp" text,
+    CONSTRAINT "PK_Roles" PRIMARY KEY ("Id")
+);
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" uuid NOT NULL,
+    "FullName" text NOT NULL,
+    "IsActive" boolean NOT NULL,
+    "UserName" character varying(256),
+    "NormalizedUserName" character varying(256),
+    "Email" character varying(256),
+    "NormalizedEmail" character varying(256),
+    "EmailConfirmed" boolean NOT NULL,
+    "PasswordHash" text,
+    "SecurityStamp" text,
+    "ConcurrencyStamp" text,
+    "PhoneNumber" text,
+    "PhoneNumberConfirmed" boolean NOT NULL,
+    "TwoFactorEnabled" boolean NOT NULL,
+    "LockoutEnd" timestamp with time zone,
+    "LockoutEnabled" boolean NOT NULL,
+    "AccessFailedCount" integer NOT NULL,
+    CONSTRAINT "PK_Users" PRIMARY KEY ("Id")
+);
+[2026-04-07 21:13:52] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "RoleClaims" (
+    "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+    "RoleId" uuid NOT NULL,
+    "ClaimType" text,
+    "ClaimValue" text,
+    CONSTRAINT "PK_RoleClaims" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_RoleClaims_Roles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "Roles" ("Id") ON DELETE CASCADE
+);
+[2026-04-07 21:13:52] [ERR] [Microsoft.EntityFrameworkCore.Database.Command] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Categories" (
+    "Id" uuid NOT NULL,
+    "Name" character varying(100) NOT NULL,
+    "ColorHex" character varying(7),
+    "UserId" uuid NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    "CreatedBy" text,
+    "UpdatedAt" timestamp with time zone,
+    "UpdatedBy" text,
+    "IsDeleted" boolean NOT NULL,
+    "DeletedAt" timestamp with time zone,
+    "DeletedBy" text,
+    CONSTRAINT "PK_Categories" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_Categories_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
+);
+[2026-04-07 21:14:47] [ERR] [Microsoft.EntityFrameworkCore.Database.Command] Failed executing DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[2026-04-07 21:14:47] [INF] [Microsoft.EntityFrameworkCore.Migrations] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-07 21:14:47] [INF] [Microsoft.EntityFrameworkCore.Migrations] Applying migration '20260407141330_InitialCreate'.

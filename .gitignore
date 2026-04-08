@@ -1,0 +1,85 @@
+# ==========================================
+# CÁC FILE CỦA HỆ ĐIỀU HÀNH
+# ==========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# ==========================================
+# BACKEND (.NET / VISUAL STUDIO)
+# ==========================================
+# Thư mục build và cấu hình tạm
+[Bb]in/
+[Oo]bj/
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.sln.docstates
+
+# File log và cache của Visual Studio
+*.suo
+*.dbmdl
+*.dbproj.schemaview
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+*.csx
+*.vssscc
+
+# File cấu hình chứa thông tin nhạy cảm (Tùy chọn, bỏ comment nếu cần)
+# appsettings.Development.json
+# appsettings.Production.json
+
+# ==========================================
+# FRONTEND (NODE.JS / REACT / VUE / ANGULAR)
+# ==========================================
+# Thư mục thư viện siêu nặng
+node_modules/
+jspm_packages/
+.npm/
+
+# Thư mục build ra sản phẩm cuối cùng
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# File log lỗi của NPM/Yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# File chứa biến môi trường và khóa bí mật (CỰC KỲ QUAN TRỌNG)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache của các công cụ Frontend
+.eslintcache
+.stylelintcache
+.parcel-cache
+.vuepress/.cache
+.temp/
+
+# ==========================================
+# CÔNG CỤ KHÁC (DOCKER / LOGS)
+# ==========================================
+*.log
+# !docker-compose.yml

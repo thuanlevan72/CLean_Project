@@ -1,0 +1,67 @@
+[2026-04-04 07:47:07] [INF] [Microsoft.Hosting.Lifetime] Now listening on: https://localhost:7096
+[2026-04-04 07:47:07] [INF] [Microsoft.Hosting.Lifetime] Now listening on: http://localhost:5197
+[2026-04-04 07:47:07] [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+[2026-04-04 07:47:07] [INF] [Microsoft.Hosting.Lifetime] Hosting environment: Development
+[2026-04-04 07:47:07] [INF] [Microsoft.Hosting.Lifetime] Content root path: D:\Work\todo_project\Api
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger - null null
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger - 301 null null 283.1322ms
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/index.html - null null
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/index.html - 200 null text/html;charset=utf-8 158.9148ms
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/swagger-ui-standalone-preset.js - null null
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/swagger-ui.css - null null
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/swagger-ui-bundle.js - null null
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 101.4832ms
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/swagger-ui.css - 200 152034 text/css 101.6096ms
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+[2026-04-04 07:47:10] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 125.084ms
+[2026-04-04 07:47:12] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/_framework/aspnetcore-browser-refresh.js - null null
+[2026-04-04 07:47:12] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/_vs/browserLink - null null
+[2026-04-04 07:47:12] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/_framework/aspnetcore-browser-refresh.js - 200 16491 application/javascript; charset=utf-8 4.3617ms
+[2026-04-04 07:47:13] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.4122ms
+[2026-04-04 07:47:13] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/v1/swagger.json - null null
+[2026-04-04 07:47:13] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.5714ms
+[2026-04-04 07:47:13] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/favicon-32x32.png - null null
+[2026-04-04 07:47:13] [INF] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+[2026-04-04 07:47:13] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/favicon-32x32.png - 200 628 image/png 0.9743ms
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/index.html - null null
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/index.html - 200 null text/html;charset=utf-8 2.9843ms
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/_framework/aspnetcore-browser-refresh.js - null null
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/_framework/aspnetcore-browser-refresh.js - 200 16491 application/javascript; charset=utf-8 0.5902ms
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/_vs/browserLink - null null
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.3704ms
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 GET https://localhost:7096/swagger/v1/swagger.json - null null
+[2026-04-04 07:47:52] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 GET https://localhost:7096/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.184ms
+[2026-04-04 07:48:20] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 PUT https://localhost:7096/api/Todo - application/json 117
+[2026-04-04 07:48:20] [INF] [Microsoft.AspNetCore.Routing.EndpointMiddleware] Executing endpoint 'Api.Controllers.Todo.TodoController.Put (Api)'
+[2026-04-04 07:48:20] [INF] [Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker] Route matched with {action = "Put", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Put(Application.Services.Todo.Commands.UpdateTodo.UpdateTodoCommand) on controller Api.Controllers.Todo.TodoController (Api).
+[2026-04-04 07:48:20] [WRN] [LuckyPennySoftware.MediatR.License] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+[2026-04-04 07:48:21] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (41ms) [Parameters=[@p='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CategoryId", t."Completed", t."CreatedAt", t."SoftDelete", t."Text", t."UpdatedAt"
+FROM "Todos" AS t
+WHERE t."SoftDelete" IS NULL AND t."Id" = @p
+LIMIT 1
+[2026-04-04 07:48:21] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (5ms) [Parameters=[@p6='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Todos" SET "CategoryId" = @p0, "Completed" = @p1, "CreatedAt" = @p2, "SoftDelete" = @p3, "Text" = @p4, "UpdatedAt" = @p5
+WHERE "Id" = @p6;
+[2026-04-04 07:48:25] [WRN] [Application.Services.Todo.Commands.UpdateTodo.UpdateTodoCommand] [PERFORMANCE_WARNING] Tính năng UpdateTodoCommand chạy quá chậm! Thời gian: 1289 ms. Dữ liệu Request: {"Id":"2bd96d12-fec4-4608-a2ff-353b7f9971d9","Dto":{"Text":"string_update","Completed":true,"$type":"UpdateTodoDto"},"$type":"UpdateTodoCommand"}
+[2026-04-04 07:48:25] [INF] [Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor] Executing OkObjectResult, writing value of type 'Application.Dtos.TodoDto'.
+[2026-04-04 07:48:25] [INF] [Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker] Executed action Api.Controllers.Todo.TodoController.Put (Api) in 5138.8598ms
+[2026-04-04 07:48:25] [INF] [Microsoft.AspNetCore.Routing.EndpointMiddleware] Executed endpoint 'Api.Controllers.Todo.TodoController.Put (Api)'
+[2026-04-04 07:48:25] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 PUT https://localhost:7096/api/Todo - 200 null application/json; charset=utf-8 5168.7245ms
+[2026-04-04 07:49:12] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request starting HTTP/2 PUT https://localhost:7096/api/Todo - application/json 119
+[2026-04-04 07:49:12] [INF] [Microsoft.AspNetCore.Routing.EndpointMiddleware] Executing endpoint 'Api.Controllers.Todo.TodoController.Put (Api)'
+[2026-04-04 07:49:12] [INF] [Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker] Route matched with {action = "Put", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Put(Application.Services.Todo.Commands.UpdateTodo.UpdateTodoCommand) on controller Api.Controllers.Todo.TodoController (Api).
+[2026-04-04 07:49:12] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CategoryId", t."Completed", t."CreatedAt", t."SoftDelete", t."Text", t."UpdatedAt"
+FROM "Todos" AS t
+WHERE t."SoftDelete" IS NULL AND t."Id" = @p
+LIMIT 1
+[2026-04-04 07:49:12] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (1ms) [Parameters=[@p6='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Todos" SET "CategoryId" = @p0, "Completed" = @p1, "CreatedAt" = @p2, "SoftDelete" = @p3, "Text" = @p4, "UpdatedAt" = @p5
+WHERE "Id" = @p6;
+[2026-04-04 07:49:13] [INF] [Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor] Executing OkObjectResult, writing value of type 'Application.Dtos.TodoDto'.
+[2026-04-04 07:49:13] [INF] [Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker] Executed action Api.Controllers.Todo.TodoController.Put (Api) in 1276.6385ms
+[2026-04-04 07:49:13] [INF] [Microsoft.AspNetCore.Routing.EndpointMiddleware] Executed endpoint 'Api.Controllers.Todo.TodoController.Put (Api)'
+[2026-04-04 07:49:13] [INF] [Microsoft.AspNetCore.Hosting.Diagnostics] Request finished HTTP/2 PUT https://localhost:7096/api/Todo - 200 null application/json; charset=utf-8 1280.3892ms
